@@ -107,24 +107,9 @@ export class AuthService {
           this.user = res;
           if (!this.user.isDeleted) {
             this.router.navigate(['home/products']);
-            this.snackBar.open('Logged In.', 'X', {
-              horizontalPosition: 'center',
-              verticalPosition: 'top',
-              duration: 800,
-            });
           } else {
-            this.snackBar.open(
-              'Your account has been disabled by Admin.',
-              'X',
-              {
-                horizontalPosition: 'center',
-                verticalPosition: 'top',
-                duration: 800,
-              }
-            );
             this.router.navigate(['']);
           }
-
           this.appStore.dispatch(new UpdateUserRole(this.user?.role));
         });
       })

@@ -26,7 +26,7 @@ export class AdminPanelComponent {
     },
   ];
   dataSource = this.tableData;
-  displayedColumns: string[] = ['username', 'role', 'delete'];
+  displayedColumns: string[] = ['username', 'role', 'changerole', 'delete'];
   constructor(
     private store: Store,
     private fireStore: AngularFirestore,
