@@ -1,6 +1,30 @@
 # BeyondiAngularApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+The application is build using Firebase Web API's reference document https://developers.google.com/codelabs/building-a-web-app-with-angular-and-firebase and is not a standalone application. Built using below Angular Building block.
+
+Modules: AppModule.
+
+Store: Ngsx store used for managing state of the user. Can find the changes in store/app.state.ts file.
+
+Routing: Implemented in app.routing.module.ts.
+
+Authentication: Includes below divisions
+
+AuthComponents : Login and SignUp components
+
+Authentication: Firebase Authentication -enabled Email and Password Authentication.
+
+FireBase Auth: RegisterUser, SignInUser, ResetUserPassword.
+Hard User account deletion is not supported by WebAPI, need backend services such as Node js etc.
+
+Components: HomeComponent, ProductsComponent and AdminComponent.
+
+Services: AuthService.
+
+## Installation
+
+Run `npm install`
 
 ## Development server
 
