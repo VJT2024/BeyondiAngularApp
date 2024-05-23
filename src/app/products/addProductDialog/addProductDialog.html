@@ -1,0 +1,75 @@
+<div *ngIf="data.type === 'add' || data.type === 'edit'">
+  <p>Add Product</p>
+  <form [formGroup]="addProductFormGroup" (ngSubmit)="submitProductForm()">
+    <mat-dialog-content>
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter product name"
+          formControlName="name"
+          name="name"
+          required
+          type="name"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Properties</mat-label>
+        <input
+          matInput
+          placeholder="Enter properties line 1"
+          formControlName="prop1"
+          name="prop1"
+          required
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Enter properties line 2"
+          formControlName="prop2"
+          name="prop2"
+          type="text"
+        />
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+      <button type="submit" [disabled]="addProductFormGroup.invalid">
+        Submit
+      </button>
+    </mat-dialog-actions>
+  </form>
+</div>
+<div *ngIf="data.type === 'user'">
+  <p>Add Product</p>
+  <form [formGroup]="addUserFormGroup" (ngSubmit)="addUser()">
+    <mat-dialog-content>
+      <mat-form-field>
+        <mat-label>Email Id</mat-label>
+        <input
+          matInput
+          placeholder="Enter email id"
+          formControlName="username"
+          name="username"
+          required
+          type="text"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option value="admin">Admin</mat-option>
+          <mat-option value="user" selected>Users</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Close</button>
+      <button type="submit" [disabled]="addUserFormGroup.invalid">
+        Submit
+      </button>
+    </mat-dialog-actions>
+  </form>
+</div>

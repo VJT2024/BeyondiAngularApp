@@ -1,0 +1,33 @@
+<div class="signIn_Form">
+  <form [formGroup]="signUpFormGroup" (ngSubmit)="submitSignUpForm()">
+    <mat-form-field>
+      <mat-label>Email id:</mat-label>
+      <input
+        matInput
+        placeholder="Enter email id"
+        formControlName="email"
+        name="email"
+        required
+        type="email"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Password:</mat-label>
+      <input
+        matInput
+        placeholder="Enter password"
+        formControlName="password"
+        name="password"
+        required
+        type="password"
+      />
+    </mat-form-field>
+    <p class="error" *ngIf="signUpFormGroup.invalid && signUpFormGroup.touched">
+      <span>Enter a valid email id and a strong Password</span>
+    </p>
+    <button type="submit" [disabled]="signUpFormGroup.invalid">SignUp</button>
+    <div class="option">
+      <p>Existing user? <span (click)="loginUser()">Login</span></p>
+    </div>
+  </form>
+</div>

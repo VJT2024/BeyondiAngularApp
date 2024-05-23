@@ -1,0 +1,32 @@
+<div class="products">
+  <div class="productList__top">
+    <p class="info">Here's our list of Products for you.</p>
+    <button
+      (click)="openAddDialog('add')"
+      *ngIf="(userDetails$ | async)?.role === 'admin'"
+    >
+      Add products
+    </button>
+  </div>
+  <div class="productList__middle">
+    <div class="product_item" *ngFor="let item of todo | async">
+      <mat-card>
+        <mat-card-header
+          ><mat-card-title>{{
+            item?.name | titlecase
+          }}</mat-card-title></mat-card-header
+        >
+        <mat-card-content
+          ><p>{{ item?.prop1 }}</p>
+          <p>{{ item?.prop2 }}</p>
+        </mat-card-content>
+        <mat-card-actions *ngIf="(userDetails$ | async)?.role === 'admin'">
+          <mat-icon class="delete" (click)="delete(item.id)">delete</mat-icon>
+          <mat-icon class="edit" (click)="openAddDialog('edit', item)"
+            >edit</mat-icon
+          >
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

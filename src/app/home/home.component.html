@@ -1,0 +1,24 @@
+<mat-toolbar class="header" color="primary">
+  <div class="header_left">
+    <mat-icon>local_fire_department</mat-icon>
+    <span>Welcome to Beyondi</span>
+  </div>
+  <button (click)="signOutUser()">Sign out</button>
+</mat-toolbar>
+<mat-toolbar class="menuBar">
+  <div class="menuBar__left">
+    <button routerLink="products">Products</button>
+    <button
+      *ngIf="(userDetails$ | async)?.role === 'admin'"
+      routerLink="adminPanel"
+    >
+      Admin Panel
+    </button>
+  </div>
+  <div class="menuBar__right">
+    <span class="email">{{ (userDetails$ | async)?.email }}</span>
+    <span class="role">{{ (userDetails$ | async)?.role }}</span>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

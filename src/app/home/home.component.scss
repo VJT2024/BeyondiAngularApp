@@ -1,0 +1,39 @@
+.header {
+  justify-content: space-between;
+
+  button {
+    background-color: #ffff;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    height: 30px;
+  }
+}
+.menuBar {
+  background-color: white;
+  box-shadow: 1px grey;
+  justify-content: space-between;
+
+  .menuBar__right {
+    .role {
+      font-size: 12px;
+      color: rgb(67, 64, 64);
+    }
+    .email {
+      margin-right: 2px;
+      font-size: 14px;
+    }
+  }
+  button {
+    border: none;
+    height: 36px;
+    width: fit-content;
+    background-color: #ffff;
+    padding: 10px;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: rgb(232, 231, 231);
+    }
+  }
+}
